@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+</head>
+<body>
+<div th:insert="navbar.html"></div>
+<h1>Welcome to Gallery!!</h1>
+<hr>
+<form method="post" action="galleryPost" enctype="multipart/form-data">
+    <input type="file" name="imgFile">
+    <input type="submit" value="Upload Image">
+</form>
+
+</body>
+</html>

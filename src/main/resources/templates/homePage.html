@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+<div th:insert="navbar.html"></div>
+
+<h1>Welcome to the jungle!</h1>
+
+<hr>
+
+<table class="table">
+    <tr>
+        <td>Id</td>
+        <td>Username</td>
+        <td>Edit Username</td>
+        <td>Delete User</td>
+    </tr>
+
+    <tr th:each="user:${totalUsers}">
+        <td th:text="${user.getId()}"><</td>
+        <td th:text="${user.getUsername()}"><</td>
+        <td>
+            <form method="post" action="editUser">
+                <input type="hidden" name="id" th:value="${user.getId()}">
+                <input type="submit" value="Edit this Username">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="deleteUser">
+                <input type="hidden" th:value="${user.getId()}" name="id">
+                <input type="submit" value="Delete this user">
+            </form>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
+
