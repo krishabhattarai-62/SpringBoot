@@ -4,6 +4,8 @@ import io.herald.springboot.Model.UserTable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface UserRepository extends JpaRepository<UserTable, Integer> {
 
@@ -17,5 +19,5 @@ public interface UserRepository extends JpaRepository<UserTable, Integer> {
 
     //Custom Syntaxes Signature
 
-
+    List<UserTable> findByUsername(String username);
 }
