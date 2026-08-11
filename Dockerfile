@@ -8,8 +8,6 @@ COPY . .
 # Build the Spring Boot application, bypassing unit tests for deployment
 RUN mvn clean package -DskipTests
 
-7
-
 # Expose the standard port for web traf ic
 EXPOSE 8080
 # Execute the compiled application using dynamic jar handling
